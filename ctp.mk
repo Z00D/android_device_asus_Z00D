@@ -273,10 +273,10 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/asus/ctp-common/ctp-common-vendor.mk)
 
 # Intel_updater
-PRODUCT_PACKAGES += \
-    liboempartitioning_static \
-    libcgpt_static \
-    libintel_updater
+#PRODUCT_PACKAGES += \
+#    liboempartitioning_static \
+#    libcgpt_static \
+#    libintel_updater
 
 # Alsa
 PRODUCT_PACKAGES += \

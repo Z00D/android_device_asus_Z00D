@@ -50,8 +50,8 @@ TARGET_KERNEL_CONFIG := cyanogenmod_$(TARGET_DEVICE)_defconfig
 
 BOARD_KERNEL_CMDLINE := init=/init pci=noearly loglevel=0 vmalloc=256M androidboot.hardware=redhookbay androidboot.selinux=permissive watchdog.watchdog_thresh=60 androidboot.spid=xxxx:xxxx:xxxx:xxxx:xxxx:xxxx androidboot.serialno=012345678901234567890123456789 snd_pcm.maximum_substreams=8 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on debug_locks=0
 
-TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
-TARGET_RECOVERY_UPDATER_EXTRA_LIBS += liboempartitioning_static
+#TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
+#TARGET_RECOVERY_UPDATER_EXTRA_LIBS += liboempartitioning_static
 
 # Adb
 BOARD_FUNCTIONFS_HAS_SS_COUNT := true
@@ -160,7 +160,8 @@ BOARD_PROVIDES_LIBRIL := true
 BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-TARGET_RECOVERY_FSTAB := device/asus/ctp-common/rootdir/etc/fstab.redhookbay
+TARGET_RECOVERY_FSTAB := device/asus/ctp-common/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_DEVICE_MODULES := libinit_ctp librecovery_updater_ctp thermald upi_ug31xx
 
 # Security
 BUILD_WITH_SECURITY_FRAMEWORK := chaabi_token
@@ -171,6 +172,19 @@ BOARD_SEPOLICY_DIRS += device/asus/ctp-common/sepolicy
 
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-0/0-0038/dclick_mode"
+
+# TWRP
+TW_THEME := portrait_hdpi
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_INCLUDE_CRYPTO := true
+TW_EXCLUDE_SUPERSU := true
+TW_NO_USB_STORAGE := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_INCLUDE_NTFS_3G := true
+BOARD_SUPPRESS_EMMC_WIPE := true
+RECOVERY_VARIANT := twrp
+TARGET_RECOVERY_FSTAB := device/asus/ctp-common/recovery/root/etc/twrp.fstab
 
 # Wifi
 BOARD_WLAN_DEVICE           := bcmdhd
