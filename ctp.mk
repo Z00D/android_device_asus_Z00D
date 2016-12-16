@@ -287,6 +287,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/asus/ctp-common/audio/silence.wav:system/etc/silence.wav
 
+PRODUCT_COPY_FILES += \
+    device/asus/ctp-common/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Add WiFi Firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
 

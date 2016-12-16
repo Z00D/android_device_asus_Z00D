@@ -160,7 +160,7 @@ BOARD_PROVIDES_LIBRIL := true
 BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-TARGET_RECOVERY_FSTAB := device/asus/ctp-common/recovery/root/etc/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/asus/ctp-common/rootdir/etc/fstab.redhookbay
 TARGET_RECOVERY_DEVICE_MODULES := libinit_ctp librecovery_updater_ctp thermald upi_ug31xx
 
 # Security
