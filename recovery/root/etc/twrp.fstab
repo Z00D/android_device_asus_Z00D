@@ -5,7 +5,7 @@
 /system		ext4		/dev/block/by-name/system
 /data		ext4		/dev/block/by-name/data				flags=encryptable=/config/userdata_footer
 /factory	ext4		/dev/block/by-name/factory			flags=display="Factory"
-/config		ext4		/dev/block/by-name/config
-/external_sd     vfat    	/dev/block/mmcblk1p1    		flags=display="MicroSD";storage;wipeingui;removable
-/usb_otg       vfat     /dev/block/sda1	 /dev/block/sda       flags=display="USB-OTG";storage;wipeingui;removable
+/config		ext4		/dev/block/by-name/config			flags=backup=1
+/external_sd    vfat		/dev/block/mmcblk1p1				flags=display="MicroSD";storage;wipeingui;removable
+/usb_otg        vfat		/dev/block/sda1					flags=display="USB-OTG";storage;wipeingui;removable
 
