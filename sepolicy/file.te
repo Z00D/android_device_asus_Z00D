@@ -38,3 +38,6 @@ type wifi_config_file, file_type, data_file_type;
 
 #type for proc files
 type proc_synaptics_dsx, fs_type; 
+
+type sensors_socket, file_type;
+type sensors_data_file, file_type, data_file_type;
